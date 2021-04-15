@@ -17,7 +17,7 @@
 		<sonar.projectKey>Esnote33_parkingsystem</sonar.projectKey>
 		<sonar.organization>esnote33-2</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>9dd9c282976fbfdc4ee894d649bf8ef1c1e9b2a4</sonar.login>
+		
 
 
 	</properties>

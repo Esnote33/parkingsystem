@@ -3,14 +3,19 @@ package com.parkit.parkingsystem.service;
 import java.time.Duration;
 import java.util.Date;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.parkit.parkingsystem.constants.Fare;
+
 import com.parkit.parkingsystem.model.Ticket;
 
 public class FareCalculatorService {
+	private static final Logger logger = LogManager.getLogger("FareCalculatorService");
 
 	public void calculateFare(Ticket ticket) {
-		System.out.println(ticket.getInTime());
-		System.out.println(ticket.getOutTime());
+		logger.info(ticket.getInTime());
+		logger.info(ticket.getOutTime());
 		if ((ticket.getOutTime() == null) || (ticket.getOutTime().before(ticket.getInTime()))) {
 			throw new IllegalArgumentException("Out time provided is incorrect:" + ticket.getOutTime().toString());
 		}
@@ -18,7 +23,6 @@ public class FareCalculatorService {
 		Date inHour = ticket.getInTime();
 		Date outHour = ticket.getOutTime();
 
-// TODO: Some tests are failing here. Need to check if this logic is correct
 		Duration duration = Duration.between(inHour.toInstant(), outHour.toInstant());
 
 		double reductionUserRecurring = 1;
