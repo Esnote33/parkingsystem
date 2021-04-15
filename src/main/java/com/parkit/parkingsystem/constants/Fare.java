@@ -8,4 +8,7 @@ public class Fare {
 		return (double) Math.round(price * 100) / 100;
 	}
 
+	private Fare() {
+
+	}
 }
