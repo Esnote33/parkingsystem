@@ -44,7 +44,7 @@ public class ParkingService {
 
 				boolean isUserRecurring = ticketDAO.recurringUsers(vehicleRegNumber);
 				if (isUserRecurring) {
-					logger.info("As a recurring user, you'll benefit from a % discount.", "5%");
+					logger.info("Welcome back!As a recurring user," + "you'll benefit from a 5% discount.");
 				}
 				ticket.setParkingSpot(parkingSpot);
 				ticket.setVehicleRegNumber(vehicleRegNumber);
@@ -53,10 +53,10 @@ public class ParkingService {
 				ticket.setOutTime(null);
 				ticket.setUserRecurring(isUserRecurring);
 				ticketDAO.saveTicket(ticket);
-				logger.info("As a recurring user, you'll benefit from a % discount.", "5%");
+				logger.info("Welcome back!As a recurring user," + "you'll benefit from a 5% discount.");
 				logger.info("Generated Ticket and saved in DB");
-				logger.info("Please park your vehicle in spot number:%s", parkingSpot.getId());
-				logger.info("Recorded in-time for vehicle number:%s is: %s", vehicleRegNumber, inTime);
+				logger.info("Please park your vehicle in spot number:{}", parkingSpot.getId());
+				logger.info("Recorded in-time for vehicle number:{} is:{} ", vehicleRegNumber, inTime);
 			}
 		} catch (Exception e) {
 			logger.error("Unable to process incoming vehicle", e);
@@ -117,8 +117,8 @@ public class ParkingService {
 				ParkingSpot parkingSpot = ticket.getParkingSpot();
 				parkingSpot.setAvailable(true);
 				parkingSpotDAO.updateParking(parkingSpot);
-				logger.info("Please pay the parking fare:%d", ticket.getPrice());
-				logger.info("Recorded out-time for vehicle number:%s is: %s", ticket.getVehicleRegNumber(), outTime);
+				logger.info("Please pay the parking fare:{}", ticket.getPrice());
+				logger.info("Recorded out-time for vehicle number:{} is: {}", ticket.getVehicleRegNumber(), outTime);
 			} else {
 				logger.error("Unable to update ticket information. Error occurred");
 			}
