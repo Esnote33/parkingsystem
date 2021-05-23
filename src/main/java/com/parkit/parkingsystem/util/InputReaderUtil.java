@@ -12,6 +12,7 @@ public class InputReaderUtil {
 
 	public int readSelection() {
 		try {
+
 			return (Integer.parseInt(scan.nextLine()));
 
 		} catch (Exception e) {

@@ -68,4 +68,6 @@ public class ParkingSpotDAO {
 		this.dataBaseConfig = dataBaseConfig;
 	}
 
+	
+
 }

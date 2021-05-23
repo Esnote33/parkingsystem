@@ -18,7 +18,7 @@
 		<maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
 		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
 		<assertj.version>3.19.0</assertj.version>
-		
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -27,6 +27,8 @@
 		<sonar.projectKey>Esnote33_parkingsystem</sonar.projectKey>
 		<sonar.organization>esnote33-2</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+		<sonar.language>java</sonar.language>
 		<sonar.login>9dd9c282976fbfdc4ee894d649bf8ef1c1e9b2a4</sonar.login>
 
 
@@ -163,9 +165,16 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.github.spotbugs</groupId>
-				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>4.2.2</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.9.1</version>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.1.1</version>
 			</plugin>
 
 		</plugins>

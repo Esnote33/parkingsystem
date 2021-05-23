@@ -2,6 +2,10 @@ package com.parkit.parkingsystem.model;
 
 import com.parkit.parkingsystem.constants.ParkingType;
 
+/**
+ * model of ParkingSpot
+ */
+
 public class ParkingSpot {
 	private int number;
 	private ParkingType parkingType;
@@ -14,7 +18,7 @@ public class ParkingSpot {
 	}
 
 	public int getId() {
-		return number;
+	    return number;
 	}
 
 	public void setId(int number) {
